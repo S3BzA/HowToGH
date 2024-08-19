@@ -4,12 +4,24 @@
 #include <string>
 
 /**
+ * @class Component
  * @brief Abstract base class for components in the composite pattern.
  * 
  * This class defines the interface for all components in the composite pattern.
  * It includes methods for setting and getting the parent component, as well as
  * methods for adding, removing, and checking if a component is a composite.
  * It also includes a pure virtual method for performing an operation.
+ *
+ * @ingroup CompositePattern
+ * 
+ * @version 1.0
+ * 
+ * @see Composite
+ * @todo Implement additional utility methods for component management.
+ * 
+ * @warning Ensure that derived classes properly implement the pure virtual methods.
+ * 
+ * @note This class is part of the Composite design pattern implementation.
  */
 class Component {
 protected:
