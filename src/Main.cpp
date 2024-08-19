@@ -6,51 +6,55 @@
 #include "Leaf.hpp"
 #include "Composite.hpp"
 
-void ClientCode(Component *component) {
+// function to demonstrate the operation of a single component
+void DemonstrateSingleComponent(Component* component) {
   std::cout << "RESULT: " << component->Operation();
 }
 
-void ClientCode2(Component *component1, Component *component2) {
-  if (component1->IsComposite()) {
-    component1->Add(component2);
+// function to demonstrate the operation of a composite component
+void DemonstrateCompositeComponent(Composite* composite, Component* component) {
+  if (composite->IsComposite()) {
+    composite->Add(component);
   }
-  std::cout << "RESULT: " << component1->Operation();
+  std::cout << "RESULT: " << composite->Operation();
 }
 
 int main() {
-  Component *simple = new Leaf;
+  // demonstrate a simple component
+  Leaf* simple = new Leaf();
   std::cout << "Client: I've got a simple component:\n";
-  ClientCode(simple);
+  DemonstrateSingleComponent(simple);
   std::cout << "\n\n";
 
-  Component *tree = new Composite;
-  Component *branch1 = new Composite;
+  // create a composite tree structure
+  Composite* tree = new Composite();
+  Composite* branch1 = new Composite();
 
-  Component *leaf_1 = new Leaf;
-  Component *leaf_2 = new Leaf;
-  Component *leaf_3 = new Leaf;
-  branch1->Add(leaf_1);
-  branch1->Add(leaf_2);
-  Component *branch2 = new Composite;
-  branch2->Add(leaf_3);
+  Leaf* leaf1 = new Leaf();
+  Leaf* leaf2 = new Leaf();
+  Leaf* leaf3 = new Leaf();
+
+  branch1->Add(leaf1);
+  branch1->Add(leaf2);
+
+  Composite* branch2 = new Composite();
+  branch2->Add(leaf3);
+
   tree->Add(branch1);
   tree->Add(branch2);
+
   std::cout << "Client: Now I've got a composite tree:\n";
-  ClientCode(tree);
+  DemonstrateSingleComponent(tree);
   std::cout << "\n\n";
 
-  std::cout << "Client: I don't need to check the components classes even when "
-               "managing the tree:\n";
-  ClientCode2(tree, simple);
+  // demonstrate managing the composite tree
+  std::cout << "Client: I don't need to check the components classes even when managing the tree:\n";
+  DemonstrateCompositeComponent(tree, simple);
   std::cout << "\n";
 
+  // clean up memory
   delete simple;
-  delete tree;
-  delete branch1;
-  delete branch2;
-  delete leaf_1;
-  delete leaf_2;
-  delete leaf_3;
+  delete tree; // This should recursively delete all children
 
   return 0;
 }
