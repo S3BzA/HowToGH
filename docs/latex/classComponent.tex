@@ -1,0 +1,93 @@
+\doxysection{Component Class Reference}
+\hypertarget{classComponent}{}\label{classComponent}\index{Component@{Component}}
+Inheritance diagram for Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classComponent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classComponent_a2e9aa4348314d981f05f67397ad2f872}{\texorpdfstring{$\sim$}{\string~}\+Component}} ()
+\item 
+\Hypertarget{classComponent_a18d4b870ab8f711d030d4a7f1291c42b}\label{classComponent_a18d4b870ab8f711d030d4a7f1291c42b} 
+void {\bfseries Set\+Parent} (\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*}parent)
+\item 
+\Hypertarget{classComponent_a94eaf55aa4014c80f4372d574b0d4886}\label{classComponent_a94eaf55aa4014c80f4372d574b0d4886} 
+\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Parent} () const
+\item 
+virtual void \mbox{\hyperlink{classComponent_afb526f088de63722a10be6491ccfbdaf}{Add}} (\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*}component)
+\item 
+virtual void \mbox{\hyperlink{classComponent_a8d2ce56c619f8456fadff49a79694c18}{Remove}} (\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*}component)
+\item 
+virtual bool \mbox{\hyperlink{classComponent_a778ed768819b340b1f90b1573c5d09d3}{Is\+Composite}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classComponent_a24eeec57512a3d94df4f464c43c4fbb5}{Operation}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classComponent_acca15441f5608ecb197a937d3468e074}\label{classComponent_acca15441f5608ecb197a937d3468e074} 
+\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base \doxylink{classComponent}{Component} class declares common operations for both simple and complex objects of a composition. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classComponent_a2e9aa4348314d981f05f67397ad2f872}\index{Component@{Component}!````~Component@{\texorpdfstring{$\sim$}{\string~}Component}}
+\index{````~Component@{\texorpdfstring{$\sim$}{\string~}Component}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Component()}{\string~Component()}}
+{\footnotesize\ttfamily \label{classComponent_a2e9aa4348314d981f05f67397ad2f872} 
+virtual Component\+::\texorpdfstring{$\sim$}{\string~}\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Optionally, the base \doxylink{classComponent}{Component} can declare an interface for setting and accessing a parent of the component in a tree structure. It can also provide some default implementation for these methods. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classComponent_afb526f088de63722a10be6491ccfbdaf}\index{Component@{Component}!Add@{Add}}
+\index{Add@{Add}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily \label{classComponent_afb526f088de63722a10be6491ccfbdaf} 
+virtual void Component\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*}}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+In some cases, it would be beneficial to define the child-\/management operations right in the base \doxylink{classComponent}{Component} class. This way, you won\textquotesingle{}t need to expose any concrete component classes to the client code, even during the object tree assembly. The downside is that these methods will be empty for the leaf-\/level components. 
+
+Reimplemented in \mbox{\hyperlink{classComposite_a5664cf250d164e716eec124c9955fa30}{Composite}}.
+
+\Hypertarget{classComponent_a778ed768819b340b1f90b1573c5d09d3}\index{Component@{Component}!IsComposite@{IsComposite}}
+\index{IsComposite@{IsComposite}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{IsComposite()}{IsComposite()}}
+{\footnotesize\ttfamily \label{classComponent_a778ed768819b340b1f90b1573c5d09d3} 
+virtual bool Component\+::\+Is\+Composite (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+You can provide a method that lets the client code figure out whether a component can bear children. 
+
+Reimplemented in \mbox{\hyperlink{classComposite_a68830575d02338f3a7adc79c94acf963}{Composite}}.
+
+\Hypertarget{classComponent_a24eeec57512a3d94df4f464c43c4fbb5}\index{Component@{Component}!Operation@{Operation}}
+\index{Operation@{Operation}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Operation()}{Operation()}}
+{\footnotesize\ttfamily \label{classComponent_a24eeec57512a3d94df4f464c43c4fbb5} 
+virtual std\+::string Component\+::\+Operation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+The base \doxylink{classComponent}{Component} may implement some default behavior or leave it to concrete classes (by declaring the method containing the behavior as "{}abstract"{}). 
+
+Implemented in \mbox{\hyperlink{classComposite_a0a4ddbea8bc46d502b0f4668a5648f0d}{Composite}}, and \mbox{\hyperlink{classLeaf_a2145f719011005d88839724eccf09bc5}{Leaf}}.
+
+\Hypertarget{classComponent_a8d2ce56c619f8456fadff49a79694c18}\index{Component@{Component}!Remove@{Remove}}
+\index{Remove@{Remove}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily \label{classComponent_a8d2ce56c619f8456fadff49a79694c18} 
+virtual void Component\+::\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*}}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classComposite_ae710fcc581a55d5f62343403262ad02c}{Composite}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/Main.\+cpp\end{DoxyCompactItemize}

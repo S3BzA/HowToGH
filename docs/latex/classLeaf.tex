@@ -1,0 +1,57 @@
+\doxysection{Leaf Class Reference}
+\hypertarget{classLeaf}{}\label{classLeaf}\index{Leaf@{Leaf}}
+Inheritance diagram for Leaf\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLeaf}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classLeaf_a2145f719011005d88839724eccf09bc5}{Operation}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classComponent_a2e9aa4348314d981f05f67397ad2f872}{\texorpdfstring{$\sim$}{\string~}\+Component}} ()
+\item 
+void {\bfseries Set\+Parent} (\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*}parent)
+\item 
+\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Parent} () const
+\item 
+virtual void \mbox{\hyperlink{classComponent_afb526f088de63722a10be6491ccfbdaf}{Add}} (\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*}component)
+\item 
+virtual void \mbox{\hyperlink{classComponent_a8d2ce56c619f8456fadff49a79694c18}{Remove}} (\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*}component)
+\item 
+virtual bool \mbox{\hyperlink{classComponent_a778ed768819b340b1f90b1573c5d09d3}{Is\+Composite}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classComponent}{Component}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classLeaf}{Leaf} class represents the end objects of a composition. A leaf can\textquotesingle{}t have any children.
+
+Usually, it\textquotesingle{}s the \doxylink{classLeaf}{Leaf} objects that do the actual work, whereas \doxylink{classComposite}{Composite} objects only delegate to their sub-\/components. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLeaf_a2145f719011005d88839724eccf09bc5}\index{Leaf@{Leaf}!Operation@{Operation}}
+\index{Operation@{Operation}!Leaf@{Leaf}}
+\doxysubsubsection{\texorpdfstring{Operation()}{Operation()}}
+{\footnotesize\ttfamily \label{classLeaf_a2145f719011005d88839724eccf09bc5} 
+std\+::string Leaf\+::\+Operation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+The base \doxylink{classComponent}{Component} may implement some default behavior or leave it to concrete classes (by declaring the method containing the behavior as "{}abstract"{}). 
+
+Implements \mbox{\hyperlink{classComponent_a24eeec57512a3d94df4f464c43c4fbb5}{Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/Main.\+cpp\end{DoxyCompactItemize}
