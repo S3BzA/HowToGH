@@ -10,9 +10,7 @@ void Composite::Remove(Component *component) {
   component->SetParent(nullptr);
 }
 
-bool Composite::IsComposite() const {
-  return true;
-}
+bool Composite::IsComposite() const { return true; }
 
 std::string Composite::Operation() const {
   std::string result;
