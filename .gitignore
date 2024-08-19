@@ -36,3 +36,6 @@ build/*
 
 # Docs
 docs/*
+
+# Vscode
+.vscode
