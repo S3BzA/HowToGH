@@ -8,7 +8,7 @@
 
 // function to demonstrate the operation of a single component
 void DemonstrateSingleComponent(Component *component) {
-  std::cout << "RESULT: " << component->Operation();
+  std::cout << "RESULT------: " << component->Operation();
 }
 
 // function to demonstrate the operation of a composite component
