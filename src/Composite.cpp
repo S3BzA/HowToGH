@@ -7,6 +7,11 @@ void Composite::Add(Component *component) {
 
 void Composite::Remove(Component *component) {
   children_.remove(component);
+  if (true)
+  {
+    /* code */
+  }
+  
   component->SetParent(nullptr);
 }
 
