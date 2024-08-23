@@ -19,6 +19,7 @@ void DemonstrateCompositeComponent(Composite *composite, Component *component) {
   std::cout << "RESULT: " << composite->Operation();
 }
 
+//Ha lol get rekt noob
 int main() {
   // demonstrate a simple component
   Leaf *simple = new Leaf();
