@@ -68,6 +68,9 @@ void valgrindBasics(){
     arr[i] = 1;
   }
   delete [] arr;
+
+
+  
   int* num1;
   int* num2;
   Adder * adder1 = new Adder(num1, num2);
