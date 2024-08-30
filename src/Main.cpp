@@ -61,24 +61,30 @@
 
 // }
 void valgrindBasics(){
-  int * arr = new int[10];
-  // for (int i = 0; i <= 10; i++)
-  for (int i = 0; i < 10; i++)
-  {
-    arr[i] = 1;
-  }
-  delete [] arr;
+  // int * arr = new int[10];
+  // // for (int i = 0; i <= 10; i++)
+  // for (int i = 0; i < 10; i++)
+  // {
+  //   arr[i] = 1;
+  // }
+  // delete [] arr;
 
 
   
   int* num1;
+  // *num1 = 50;
+  num1 = new int(50);
   int* num2;
+  // *num2 = 30;
+  num2 = new int(30);
   Adder * adder1 = new Adder(num1, num2);
   adder1->doAdd();
   // Do something else
   delete adder1;
-  Adder * adder2 = new Adder(num1, num2);
-  adder2->doAdd();
+  // Adder * adder2 = new Adder(num1, num2);
+  Adder * adder2 = new Adder(new int(5), new int (8));
+  // adder2->doAdd();
+  delete adder2;
 }
 void valgrindSneakyVectorTest(){
   std::vector<Leaf> leaves;
@@ -88,10 +94,10 @@ void valgrindSneakyVectorTest(){
   Leaf * leaf2 = new Leaf();
   comps.push_back(*leaf2);
   comps.erase(comps.begin());
-  // delete leaf1;
+  delete leaf2;
 }
 int main() {
   valgrindBasics();
-  // valgrindSneakyVectorTest();
+  valgrindSneakyVectorTest();
   return 0;
 }
