@@ -29,6 +29,13 @@ TEST_CASE("Adder cannot subtract"){
     Adder* adder = new Adder(num1, num2);
     CHECK_THROWS(adder->doSubtract());  
 }
+TEST_CASE("Adding insane numbers"){
+    int* num1 = new int(1000000000);
+    int* num2 = new int(1000000000);
+    Adder* adder = new Adder(num1, num2);
+    adder->doAdd();
+    CHECK(*num1 + *num2 == 2000000000);
+}
 TEST_CASE("composites know they are composite"){
   Composite* composite = new Composite();
   CHECK(composite->IsComposite());
