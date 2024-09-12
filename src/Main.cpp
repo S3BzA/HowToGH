@@ -11,13 +11,7 @@
 #include "doctest.h"
 using namespace std;
 
-TEST_CASE("Adder can add two numbers"){
-    int* num1 = new int(5);
-    int* num2 = new int(5);
-    Adder* adder = new Adder(num1, num2);
-    adder->doAdd();
-    CHECK(*num1 + *num2 == 10);
-}
+
 TEST_CASE("Leaf knows it is not a composite"){
   Leaf* leaf = new Leaf();
   CHECK_FALSE(leaf->IsComposite());
@@ -29,15 +23,20 @@ TEST_CASE("Adder doesn't add incorrectly"){
     adder->doAdd();
     CHECK_FALSE(*num1 + *num2 == 11);
 }
-
-TEST_CASE("composites know they are composite"){
-  Composite* composite = new Composite();
-  CHECK(composite->IsComposite());
-}
-
 TEST_CASE("Adder cannot subtract"){
     int* num1 = new int(5);
     int* num2 = new int(5);
     Adder* adder = new Adder(num1, num2);
     CHECK_THROWS(adder->doSubtract());  
+}
+TEST_CASE("composites know they are composite"){
+  Composite* composite = new Composite();
+  CHECK(composite->IsComposite());
+}
+TEST_CASE("Adder can add two numbers"){
+    int* num1 = new int(5);
+    int* num2 = new int(5);
+    Adder* adder = new Adder(num1, num2);
+    adder->doAdd();
+    CHECK(*num1 + *num2 == 10);
 }
