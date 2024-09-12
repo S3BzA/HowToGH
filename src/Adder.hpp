@@ -11,7 +11,9 @@ class Adder{
         };
         void doAdd(){
             std::cout << *num1 + *num2;
-
+        }
+        void doSubtract(){
+            throw "Wrong class buddy";
         }
         ~Adder(){
             delete num1;

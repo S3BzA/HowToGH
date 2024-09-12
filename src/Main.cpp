@@ -35,3 +35,9 @@ TEST_CASE("composites know they are composite"){
   CHECK(composite->IsComposite());
 }
 
+TEST_CASE("Adder cannot subtract"){
+    int* num1 = new int(5);
+    int* num2 = new int(5);
+    Adder* adder = new Adder(num1, num2);
+    CHECK_THROWS(adder->doSubtract());  
+}
