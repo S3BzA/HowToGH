@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ADDER_H
+#define ADDER_H
 #include <iostream>
 class Adder{
     public:
@@ -17,3 +18,4 @@ class Adder{
             delete num2;
         }
 };
+#endif
