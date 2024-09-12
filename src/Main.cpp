@@ -1,3 +1,4 @@
+//only required in one file
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "Component.hpp"
 #include "Composite.hpp"
@@ -46,4 +47,19 @@ TEST_CASE("Adder can add two numbers"){
     Adder* adder = new Adder(num1, num2);
     adder->doAdd();
     CHECK(*num1 + *num2 == 10);
+}
+TEST_CASE("Adder functions as expected"){
+    SUBCASE("Adder can add two numbers"){
+        int* num1 = new int(5);
+        int* num2 = new int(5);
+        Adder* adder = new Adder(num1, num2);
+        adder->doAdd();
+        CHECK(*num1 + *num2 == 10);
+    }
+    SUBCASE("Adder cannot subtract"){
+        int* num1 = new int(5);
+        int* num2 = new int(5);
+        Adder* adder = new Adder(num1, num2);
+        CHECK_THROWS(adder->doSubtract());  
+    }
 }
